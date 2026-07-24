@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
+import CustomCursor from "@/component/Curser";
 
 
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
       <Navbar/>
         {children}
+        <CustomCursor/>
         <Footer/>
         </body>
     </html>

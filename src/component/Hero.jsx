@@ -36,7 +36,7 @@ const Hero = () => {
             variants={itemVariants}
             className="text-lg text-[#B48A83] font-medium"
           >
-            👋 Hello, I'm
+             Hello, Im
           </motion.p>
 
           <motion.h1
@@ -73,18 +73,18 @@ const Hero = () => {
               href="/resume.pdf"
               whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(141,111,105,0.5)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#8D6F69] hover:bg-[#a07b73] px-8 py-4 rounded-full font-semibold transition duration-300"
+              className="bg-[#8D6F69] hover:bg-[#a07b73] flex justify-center item-center gap-2 px-8 py-4 rounded-full font-semibold transition duration-300"
             >
-              Download Resume
+              <Download size={18} className="mt-1"/> Download Resume
             </motion.a>
 
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05, backgroundColor: "white", color: "black" }}
               whileTap={{ scale: 0.95 }}
-              className="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition duration-300"
+              className="border border-white px-8 flex justify-center item-center gap-2 py-4 rounded-full hover:bg-white hover:text-black transition duration-300"
             >
-              Contact Me
+             <IoMdContact size={18} className="mt-1"/> Contact Me
             </motion.a>
           </motion.div>
 
@@ -164,6 +164,8 @@ const Hero = () => {
 
 /* Simple typewriter effect */
 import { useEffect, useState } from "react";
+import { Download } from "lucide-react";
+import { IoMdContact } from "react-icons/io";
 
 const TypewriterText = ({ text }) => {
   const [displayed, setDisplayed] = useState("");

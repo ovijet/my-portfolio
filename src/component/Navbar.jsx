@@ -5,13 +5,14 @@ import Link from "next/link";
 import { Download, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 const links = [
-  { name: "Home", href: "#home", id: "home" },
-  { name: "About", href: "#about", id: "about" },
-  { name: "Skills", href: "#skills", id: "skills" },
-  { name: "Projects", href: "#projects", id: "projects" },
-  { name: "Education", href: "#education", id: "education" },
-  { name: "Contact", href: "#contact", id: "contact" },
+  { name: "Home", href: "/#home", id: "home" },
+  { name: "About", href: "/#about", id: "about" },
+  { name: "Skills", href: "/#skills", id: "skills" },
+  { name: "Projects", href: "/#projects", id: "projects" },
+  { name: "Education", href: "/#education", id: "education" },
+  { name: "Contact", href: "/#contact", id: "contact" },
 ];
 
 const Navbar = () => {

@@ -118,7 +118,7 @@ const Navbar = () => {
 
         {/* Resume Button */}
         <motion.a
-          href="/resume.pdf"
+          href="/Ovi-Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, x: 20 }}

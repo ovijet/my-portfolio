@@ -25,7 +25,6 @@ const Hero = () => {
       className="min-h-screen bg-[#2d2b34] text-white flex items-center pt-24 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center w-full">
-
         {/* Left Side */}
         <motion.div
           variants={containerVariants}
@@ -36,15 +35,14 @@ const Hero = () => {
             variants={itemVariants}
             className="text-lg text-[#B48A83] font-medium"
           >
-             Hello, Im
+            Hello, Im
           </motion.p>
 
           <motion.h1
             variants={itemVariants}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 leading-tight"
           >
-            Ovijet{" "}
-            <span className="text-[#B48A83]"> Halder</span>
+            Ovijet <span className="text-[#B48A83]"> Halder</span>
           </motion.h1>
 
           <motion.h2
@@ -58,10 +56,10 @@ const Hero = () => {
             variants={itemVariants}
             className="mt-6 text-gray-400 leading-8 max-w-xl"
           >
-            Passionate Frontend Developer skilled in React, Next.js,
-            Tailwind CSS and JavaScript. I enjoy creating responsive,
-            modern and user-friendly web applications with clean UI and
-            smooth user experience.
+            Passionate Frontend Developer skilled in React, Next.js, Tailwind
+            CSS and JavaScript. I enjoy creating responsive, modern and
+            user-friendly web applications with clean UI and smooth user
+            experience.
           </motion.p>
 
           {/* Buttons */}
@@ -70,21 +68,30 @@ const Hero = () => {
             className="flex flex-wrap gap-5 mt-10"
           >
             <motion.a
-              href="/resume.pdf"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(141,111,105,0.5)" }}
+              href="/Ovi-Resume.pdf"
+              download="Ovi-Resume.pdf"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 25px rgba(141,111,105,0.5)",
+              }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#8D6F69] hover:bg-[#a07b73] flex justify-center item-center gap-2 px-8 py-4 rounded-full font-semibold transition duration-300"
+              className="bg-[#8D6F69] hover:bg-[#a07b73] flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition duration-300"
             >
-              <Download size={18} className="mt-1"/> Download Resume
+              <Download size={18} />
+              Download Resume
             </motion.a>
 
             <motion.a
               href="#contact"
-              whileHover={{ scale: 1.05, backgroundColor: "white", color: "black" }}
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "white",
+                color: "black",
+              }}
               whileTap={{ scale: 0.95 }}
               className="border border-white px-8 flex justify-center item-center gap-2 py-4 rounded-full hover:bg-white hover:text-black transition duration-300"
             >
-             <IoMdContact size={18} className="mt-1"/> Contact Me
+              <IoMdContact size={18} className="mt-1" /> Contact Me
             </motion.a>
           </motion.div>
 
@@ -94,9 +101,24 @@ const Hero = () => {
             className="flex flex-wrap gap-4 mt-10"
           >
             {[
-              { href: "https://github.com/ovijet", icon: <FaGithub />, label: "GitHub", hover: "#8D6F69" },
-              { href: "https://www.linkedin.com/in/ovijit-halder-1b26a9252/", icon: <FaLinkedinIn />, label: "LinkedIn", hover: "#0A66C2" },
-              { href: "https://www.facebook.com/ovijit143/", icon: <FaFacebookF />, label: "Facebook", hover: "#1877F2" },
+              {
+                href: "https://github.com/ovijet",
+                icon: <FaGithub />,
+                label: "GitHub",
+                hover: "#8D6F69",
+              },
+              {
+                href: "https://www.linkedin.com/in/ovijit-halder-1b26a9252/",
+                icon: <FaLinkedinIn />,
+                label: "LinkedIn",
+                hover: "#0A66C2",
+              },
+              {
+                href: "https://www.facebook.com/ovijit143/",
+                icon: <FaFacebookF />,
+                label: "Facebook",
+                hover: "#1877F2",
+              },
             ].map((social, i) => (
               <motion.div
                 key={social.label}
@@ -156,7 +178,6 @@ const Hero = () => {
             </motion.div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

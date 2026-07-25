@@ -49,7 +49,19 @@ const Hero = () => {
             variants={itemVariants}
             className="text-2xl md:text-3xl mt-5 text-gray-300"
           >
-            <TypewriterText text="Frontend Developer" />
+            <TypeAnimation
+              sequence={[
+                "Frontend Developer",
+                8000,
+                "Backend Developer",
+                8000,
+                "Full Stack Developer",
+                8000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
           </motion.h2>
 
           <motion.p
@@ -187,6 +199,7 @@ const Hero = () => {
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 import { IoMdContact } from "react-icons/io";
+import { TypeAnimation } from "react-type-animation";
 
 const TypewriterText = ({ text }) => {
   const [displayed, setDisplayed] = useState("");

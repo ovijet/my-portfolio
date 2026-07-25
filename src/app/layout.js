@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
 import CustomCursor from "@/component/Curser";
+import ScrollToTop from "@/component/ScrollToTop";
+
 
 
 
@@ -31,6 +33,7 @@ export default function RootLayout({ children }) {
       <Navbar/>
         {children}
         <CustomCursor/>
+        <ScrollToTop/>
         <Footer/>
         </body>
     </html>

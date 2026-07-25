@@ -7,6 +7,17 @@ import { FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Data from "../../public/Data";
 import { IoCode } from "react-icons/io5";
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiJavascript,
+  SiStripe,
+} from "react-icons/si";
+import { MdSecurity } from "react-icons/md";
 
 const Projects = () => {
   const containerVariants = {
@@ -24,6 +35,18 @@ const Projects = () => {
       scale: 1,
       transition: { duration: 0.6, ease: "easeOut" },
     },
+  };
+  const techIcons = {
+    "Next.js": <SiNextdotjs />,
+    React: <SiReact className="text-cyan-400" />,
+    "Tailwind CSS": <SiTailwindcss className="text-sky-400" />,
+    "Node.js": <SiNodedotjs className="text-green-500" />,
+    "Express.js": <SiExpress />,
+    Express: <SiExpress />,
+    MongoDB: <SiMongodb className="text-green-600" />,
+    JavaScript: <SiJavascript className="text-yellow-400" />,
+    Stripe: <SiStripe className="text-indigo-400" />,
+    "Better Auth": <MdSecurity className="text-red-400" />,
   };
   return (
     <section
@@ -95,7 +118,17 @@ const Projects = () => {
 
                 <p className="text-gray-400 leading-7">{project.description}</p>
 
-                <p className="text-sm text-[#B48A83] mt-5">{project.tech}</p>
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2f2d36] border border-white/10 text-sm text-gray-200 hover:border-[#B48A83] transition"
+                    >
+                      {techIcons[tech]}
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
                 <div className="mt-8 flex items-center gap-3 flex-wrap md:flex-nowrap">
                   {/* View Details */}
@@ -137,7 +170,6 @@ const Projects = () => {
                       className="flex items-center gap-2 border border-gray-500 px-5 py-3 rounded-full hover:bg-white hover:text-black transition whitespace-nowrap"
                     >
                       <IoCode />
-                      
                     </Link>
                   </motion.div>
                 </div>

@@ -4,6 +4,17 @@ import { notFound } from "next/navigation";
 import { FaGithub, FaArrowLeft } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import Data from "../../../../public/Data";
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiJavascript,
+  SiStripe,
+} from "react-icons/si";
+import { MdSecurity } from "react-icons/md";
 
 export default async function ProjectDetails({ params }) {
   const { id } = await params;
@@ -13,6 +24,19 @@ export default async function ProjectDetails({ params }) {
   if (!project) {
     notFound();
   }
+
+  const techIcons = {
+    "Next.js": <SiNextdotjs className="text-xl" />,
+    React: <SiReact className="text-xl text-cyan-400" />,
+    "Tailwind CSS": <SiTailwindcss className="text-xl text-sky-400" />,
+    "Node.js": <SiNodedotjs className="text-xl text-green-500" />,
+    "Express.js": <SiExpress className="text-xl" />,
+    Express: <SiExpress className="text-xl" />,
+    MongoDB: <SiMongodb className="text-xl text-green-600" />,
+    JavaScript: <SiJavascript className="text-xl text-yellow-400" />,
+    Stripe: <SiStripe className="text-xl text-indigo-400" />,
+    "Better Auth": <MdSecurity className="text-xl text-red-400" />,
+  };
 
   return (
     <section className="min-h-screen bg-[#2E2D35] text-white">
@@ -40,7 +64,7 @@ export default async function ProjectDetails({ params }) {
         </p>
 
         {/* Image */}
-        <div className="rounded-2xl overflow-hidden mb-12 border border-white/10">
+        <div className="rounded-2xl overflow-hidden mt-5 mb-12 border border-white/10">
           <img
             src={project.image}
             alt={project.title}
@@ -70,19 +94,16 @@ export default async function ProjectDetails({ params }) {
         </div>
 
         {/* Tech Stack */}
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold mb-8">Tech Stack</h2>
-
-          <div className="flex flex-wrap gap-4">
-            {project.tech.map((tech) => (
-              <span
-                key={tech}
-                className="px-5 py-2 rounded-full bg-[#3B3943] border border-white/10 text-gray-300"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+        <div className="flex flex-wrap gap-4 mt-10">
+          {project.tech.map((tech) => (
+            <div
+              key={tech}
+              className="flex items-center gap-3 px-5 py-3 rounded-xl bg-[#3B3943] border border-white/10 hover:border-[#B48A83] hover:scale-105 transition-all duration-300"
+            >
+              {techIcons[tech]}
+              <span className="text-gray-200">{tech}</span>
+            </div>
+          ))}
         </div>
 
         {/* Overview */}
@@ -90,6 +111,31 @@ export default async function ProjectDetails({ params }) {
           <h2 className="text-3xl font-bold mb-5">Project Overview</h2>
 
           <p className="text-gray-400 leading-8">{project.description}</p>
+        </div>
+        {/* Challenges */}
+        <div className="mt-20 bg-[#3B3943] rounded-3xl p-8 border border-white/10">
+          <h2 className="text-3xl font-bold mb-5">
+            Challenges Faced While Developing the Project
+          </h2>
+
+          <ul className="list-disc list-inside space-y-3 text-gray-400 leading-8">
+            {project.challenges.map((challenge, index) => (
+              <li key={index}>{challenge}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Future Plans */}
+        <div className="mt-10 bg-[#3B3943] rounded-3xl p-8 border border-white/10">
+          <h2 className="text-3xl font-bold mb-5">
+            Potential Improvements & Future Plans
+          </h2>
+
+          <ul className="list-disc list-inside space-y-3 text-gray-400 leading-8">
+            {project.futurePlans.map((plan, index) => (
+              <li key={index}>{plan}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

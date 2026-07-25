@@ -81,9 +81,9 @@ const Navbar = () => {
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
             >
-              &lt;/&gt;
+              &lt; /&gt;
             </motion.span>
-            Ovijit
+            OVIJIT
           </Link>
         </motion.div>
 

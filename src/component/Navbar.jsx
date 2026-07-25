@@ -83,7 +83,7 @@ const Navbar = () => {
             >
               &lt; /&gt;
             </motion.span>
-            OVIJIT
+            OVIJET
           </Link>
         </motion.div>
 

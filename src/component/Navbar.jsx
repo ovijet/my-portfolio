@@ -126,7 +126,7 @@ const Navbar = () => {
         </nav>
 
         {/* Resume Button */}
-        <motion.a
+        {/* <motion.a
           href="/Ovi-Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -139,7 +139,7 @@ const Navbar = () => {
         >
           <Download size={18} />
           Resume
-        </motion.a>
+        </motion.a> */}
 
         {/* Theme Toggle Desktop */}
         <div className="hidden lg:block ml-2">

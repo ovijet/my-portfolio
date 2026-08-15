@@ -61,7 +61,7 @@ const cardVariants = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="bg-[#2d2b34] text-white py-24 overflow-hidden">
+    <section id="skills" className="bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
@@ -73,16 +73,16 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-5xl font-bold">
-            My <span className="text-[#B48A83]">Skills</span>
+            My <span className="text-[#06b6d4]">Skills</span>
           </h2>
           <motion.div
-            className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#B48A83]"
+            className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#06b6d4]"
             initial={{ width: 0 }}
             whileInView={{ width: 64 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           />
-          <p className="text-gray-400 mt-4">
+          <p className="text-zinc-500 dark:text-gray-400 mt-4">
             Technologies I use to build modern web applications.
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ const Skills = () => {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h3 className="text-3xl font-semibold mb-8 text-[#B48A83]">
+            <h3 className="text-3xl font-semibold mb-8 text-[#06b6d4]">
               {group.title}
             </h3>
 
@@ -115,10 +115,10 @@ const Skills = () => {
                     y: -10,
                     scale: 1.05,
                     backgroundColor: "#46434d",
-                    boxShadow: "0 12px 35px rgba(141,111,105,0.3)",
+                    boxShadow: "0 12px 35px rgba(6,182,212,0.3)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-[#3b3943] rounded-2xl p-8 flex flex-col items-center justify-center gap-4 cursor-default transition-colors duration-300"
+                  className="bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-sm hover:bg-white/10 rounded-2xl p-8 flex flex-col items-center justify-center gap-4 cursor-default transition-colors duration-300"
                 >
                   <motion.div
                     animate={{ rotate: [0, 5, -5, 0] }}

@@ -22,7 +22,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-[#2d2b34] text-white flex items-center pt-24 overflow-hidden"
+      className="min-h-screen bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white flex items-center pt-24 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center w-full">
         {/* Left Side */}
@@ -33,7 +33,7 @@ const Hero = () => {
         >
           <motion.p
             variants={itemVariants}
-            className="text-lg text-[#B48A83] font-medium"
+            className="text-lg text-[#06b6d4] font-medium"
           >
             Hello, Im
           </motion.p>
@@ -42,12 +42,12 @@ const Hero = () => {
             variants={itemVariants}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 leading-tight"
           >
-            Ovijet <span className="text-[#B48A83]"> Halder</span>
+            Ovijit <span className="text-[#06b6d4]"> Halder</span>
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
-            className="text-2xl md:text-3xl mt-5 text-gray-300"
+            className="text-2xl md:text-3xl mt-5 text-zinc-600 dark:text-gray-300"
           >
             <TypeAnimation
               sequence={[
@@ -66,7 +66,7 @@ const Hero = () => {
 
           <motion.p
             variants={itemVariants}
-            className="mt-6 text-gray-400 leading-8 max-w-xl"
+            className="mt-6 text-zinc-500 dark:text-gray-400 leading-8 max-w-xl"
           >
             Passionate Frontend Developer skilled in React, Next.js, Tailwind
             CSS and JavaScript. I enjoy creating responsive, modern and
@@ -84,10 +84,10 @@ const Hero = () => {
               download="Ovi-Resume.pdf"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 0 25px rgba(141,111,105,0.5)",
+                boxShadow: "0 0 25px rgba(6,182,212,0.5)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#8D6F69] hover:bg-[#a07b73] flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition duration-300"
+              className="bg-[#3b82f6] hover:bg-[#2563eb] flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition duration-300"
             >
               <Download size={18} />
               Download Resume
@@ -117,7 +117,7 @@ const Hero = () => {
                 href: "https://github.com/ovijet",
                 icon: <FaGithub />,
                 label: "GitHub",
-                hover: "#8D6F69",
+                hover: "#3b82f6",
               },
               {
                 href: "https://www.linkedin.com/in/ovijit-halder-1b26a9252/",
@@ -143,7 +143,7 @@ const Hero = () => {
                 <Link
                   href={social.href}
                   target="_blank"
-                  className="flex items-center gap-2 bg-[#3b3943] px-6 py-3 rounded-full hover:bg-[#8D6F69] transition"
+                  className="flex items-center gap-2 bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 px-6 py-3 rounded-full hover:bg-[#3b82f6] hover:border-transparent transition"
                 >
                   {social.icon}
                   {social.label}
@@ -163,14 +163,14 @@ const Hero = () => {
           <div className="relative">
             {/* Glow */}
             <motion.div
-              className="absolute inset-0 bg-[#8D6F69] blur-[120px] opacity-30 rounded-full"
+              className="absolute inset-0 bg-[#3b82f6] blur-[120px] opacity-30 rounded-full"
               animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
 
             {/* Floating ring */}
             <motion.div
-              className="absolute -inset-4 rounded-full border-2 border-[#8D6F69]/30"
+              className="absolute -inset-4 rounded-full border-2 border-[#3b82f6]/30"
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
@@ -185,7 +185,7 @@ const Hero = () => {
                 alt="Ovijet Halder"
                 width={420}
                 height={420}
-                className="relative rounded-full border-[8px] border-[#8D6F69] object-cover w-[300px] h-[300px] md:w-[420px] md:h-[420px]"
+                className="relative rounded-full border-[8px] border-[#3b82f6] object-cover w-[300px] h-[300px] md:w-[420px] md:h-[420px]"
               />
             </motion.div>
           </div>
@@ -226,7 +226,7 @@ const TypewriterText = ({ text }) => {
         <motion.span
           animate={{ opacity: [1, 0, 1] }}
           transition={{ duration: 0.8, repeat: Infinity }}
-          className="inline-block w-0.5 h-8 bg-[#B48A83] ml-1 align-middle"
+          className="inline-block w-0.5 h-8 bg-[#06b6d4] ml-1 align-middle"
         />
       )}
     </span>

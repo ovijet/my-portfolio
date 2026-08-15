@@ -20,7 +20,7 @@ const socials = [
   {
     href: "https://github.com/ovijet",
     icon: <FaGithub />,
-    hover: "hover:bg-[#B48A83]",
+    hover: "hover:bg-[#06b6d4]",
   },
   {
     href: "https://www.linkedin.com/in/ovijit-halder-1b26a9252/",
@@ -36,16 +36,16 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#25232b] border-t border-white/10 text-white">
+    <footer className="bg-zinc-50 dark:bg-black border-t border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-10">
           {/* Logo & Bio */}
           <div>
             <h2 className="text-3xl font-bold">
-              Ovijet Halder<span className="text-[#B48A83]">.</span>
+              Ovijit Halder<span className="text-[#06b6d4]">.</span>
             </h2>
 
-            <p className="mt-4 text-gray-400 leading-7">
+            <p className="mt-4 text-zinc-500 dark:text-gray-400 leading-7">
               Frontend Developer passionate about building modern,
               responsive, and user-friendly web applications with React,
               Next.js, and Tailwind CSS.
@@ -63,7 +63,7 @@ const Footer = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-gray-400 hover:text-[#B48A83] transition-all duration-300 hover:translate-x-2 w-fit"
+                  className="text-zinc-500 dark:text-gray-400 hover:text-[#06b6d4] transition-all duration-300 hover:translate-x-2 w-fit"
                 >
                   {link.label}
                 </a>
@@ -77,11 +77,11 @@ const Footer = () => {
               Contact
             </h3>
 
-            <p className="text-gray-400">
+            <p className="text-zinc-500 dark:text-gray-400">
               📧 ovijethalder143@gmail.com
             </p>
 
-            <p className="text-gray-400 mt-2">
+            <p className="text-zinc-500 dark:text-gray-400 mt-2">
               📞 +8801857979055
             </p>
 
@@ -91,7 +91,7 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   target="_blank"
-                  className={`w-11 h-11 rounded-full bg-[#3b3943] flex items-center justify-center transition-all duration-300 hover:scale-110 ${social.hover}`}
+                  className={`w-11 h-11 rounded-full bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-transparent ${social.hover}`}
                 >
                   {social.icon}
                 </Link>
@@ -101,7 +101,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-zinc-200 dark:border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Ovijet Halder. All Rights Reserved.
           </p>

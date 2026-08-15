@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Download, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "./ThemeToggle";
 
 
 const links = [
@@ -65,8 +66,8 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#2d2b34]/95 backdrop-blur-2xl shadow-lg shadow-black/20 border-b border-white/10 py-3"
-          : "bg-[#2d2b34]/80 backdrop-blur-xl border-b border-white/5 py-5"
+          ? "bg-white/90 dark:bg-black/95 backdrop-blur-2xl shadow-lg border-b border-zinc-200 dark:border-white/10 py-3"
+          : "bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-zinc-200 dark:border-white/5 py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 flex items-center justify-between">
@@ -74,21 +75,29 @@ const Navbar = () => {
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             href="/"
-            className="flex items-center gap-2 text-2xl font-bold text-white tracking-wide"
+            className="flex items-center gap-2 text-2xl font-bold text-zinc-900 dark:text-white tracking-wide"
           >
             <motion.span
-              className="text-[#B48A83]"
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              className="text-[#06b6d4]"
+              animate={{ rotate: [0, -10, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
             >
-              &lt; /&gt;
+              &lt; 
             </motion.span>
-            OVIJET
+            OVIJIT
+         
+             <motion.span
+              className="text-[#06b6d4]"
+              animate={{ rotate: [0, 10, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
+            >
+                /&gt;
+            </motion.span>
           </Link>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 bg-[#3b3943]/80 border border-white/10 rounded-full p-1.5 shadow-inner">
+        <nav className="hidden lg:flex items-center gap-1 bg-zinc-100/80 dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-md rounded-full p-1.5 shadow-inner">
           {links.map((item, index) => {
             const isActive = activeSection === item.id;
             return (
@@ -100,13 +109,13 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 + 0.2, duration: 0.4 }}
                 className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 ${
-                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                  isActive ? "text-white" : "text-zinc-600 dark:text-gray-300 hover:text-zinc-900 dark:hover:text-white"
                 }`}
               >
                 {isActive && (
                   <motion.span
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-[#8B6D67] rounded-full -z-10 shadow-md shadow-[#8B6D67]/30"
+                    className="absolute inset-0 bg-[#3b82f6] rounded-full -z-10 shadow-md shadow-[#3b82f6]/30"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -124,23 +133,30 @@ const Navbar = () => {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          whileHover={{ scale: 1.03, backgroundColor: "#9c7c75" }}
+          whileHover={{ scale: 1.03, backgroundColor: "#2563eb" }}
           whileTap={{ scale: 0.97 }}
-          className="hidden lg:flex items-center gap-2 bg-[#8B6D67] text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-md transition"
+          className="hidden lg:flex items-center gap-2 bg-[#3b82f6] text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-[0_0_15px_rgba(6,182,212,0.5)] transition hover:shadow-[0_0_25px_rgba(6,182,212,0.8)]"
         >
           <Download size={18} />
           Resume
         </motion.a>
 
-        {/* Mobile Toggle Button */}
-        <motion.button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden text-white p-2 rounded-lg bg-[#3b3943] border border-white/10"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          aria-label="Toggle navigation menu"
-        >
-          <AnimatePresence mode="wait">
+        {/* Theme Toggle Desktop */}
+        <div className="hidden lg:block ml-2">
+          <ThemeToggle />
+        </div>
+
+        {/* Mobile Controls */}
+        <div className="flex items-center gap-3 lg:hidden">
+          <ThemeToggle />
+          <motion.button
+            onClick={() => setOpen(!open)}
+            className="text-zinc-800 dark:text-white p-2 rounded-lg bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Toggle navigation menu"
+          >
+            <AnimatePresence mode="wait">
             {open ? (
               <motion.div
                 key="close"
@@ -163,7 +179,8 @@ const Navbar = () => {
               </motion.div>
             )}
           </AnimatePresence>
-        </motion.button>
+          </motion.button>
+        </div>
       </div>
 
       {/* Mobile Dropdown Menu */}
@@ -174,9 +191,9 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden overflow-hidden border-t border-white/10 mt-3"
+            className="lg:hidden overflow-hidden border-t border-zinc-200 dark:border-white/10 mt-3"
           >
-            <div className="bg-[#2d2b34]/95 backdrop-blur-2xl px-6 py-6 flex flex-col gap-3">
+            <div className="bg-white/95 dark:bg-black/95 backdrop-blur-2xl px-6 py-6 flex flex-col gap-3">
               {links.map((item, index) => {
                 const isActive = activeSection === item.id;
                 return (
@@ -189,8 +206,8 @@ const Navbar = () => {
                     transition={{ delay: index * 0.05 }}
                     className={`px-4 py-3 rounded-xl text-base font-medium transition-all ${
                       isActive
-                        ? "bg-[#8B6D67] text-white font-semibold shadow-md shadow-[#8B6D67]/20"
-                        : "text-gray-300 hover:bg-[#3b3943] hover:text-white"
+                        ? "bg-[#3b82f6] text-white font-semibold shadow-md shadow-[#3b82f6]/20"
+                        : "text-zinc-600 dark:text-gray-300 hover:bg-zinc-100 dark:hover:bg-white/10 hover:text-zinc-900 dark:hover:text-white"
                     }`}
                   >
                     {item.name}
@@ -205,7 +222,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="flex justify-center items-center gap-2 bg-[#8B6D67] hover:bg-[#9c7c75] py-3 mt-2 rounded-xl text-white font-semibold shadow-md"
+                className="flex justify-center items-center gap-2 bg-[#3b82f6] hover:bg-[#2563eb] py-3 mt-2 rounded-xl text-white font-semibold shadow-[0_0_15px_rgba(6,182,212,0.5)] hover:shadow-[0_0_25px_rgba(6,182,212,0.8)]"
               >
                 <Download size={18} />
                 Resume

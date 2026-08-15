@@ -51,7 +51,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="bg-[#2d2b34] py-24 text-white overflow-hidden"
+      className="bg-zinc-50 dark:bg-black py-24 text-zinc-900 dark:text-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
@@ -63,16 +63,16 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-5xl font-bold">
-            Featured <span className="text-[#B48A83]">Projects</span>
+            Featured <span className="text-[#06b6d4]">Projects</span>
           </h2>
           <motion.div
-            className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#B48A83]"
+            className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#06b6d4]"
             initial={{ width: 0 }}
             whileInView={{ width: 64 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           />
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-zinc-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
             Here are some of my recent projects built with modern web
             technologies.
           </p>
@@ -92,9 +92,9 @@ const Projects = () => {
               variants={cardVariants}
               whileHover={{
                 y: -10,
-                boxShadow: "0 20px 50px rgba(141,111,105,0.2)",
+                boxShadow: "0 20px 50px rgba(6,182,212,0.2)",
               }}
-              className="bg-[#3b3943] rounded-3xl overflow-hidden border border-white/10 hover:border-[#B48A83]/40 transition-colors duration-300"
+              className="bg-white dark:bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 hover:border-[#06b6d4]/60 transition-all duration-300"
             >
               <div className="overflow-hidden relative group">
                 <motion.div
@@ -110,19 +110,19 @@ const Projects = () => {
                   />
                 </motion.div>
                 {/* Overlay on hover */}
-                <motion.div className="absolute inset-0 bg-[#8D6F69]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <motion.div className="absolute inset-0 bg-[#3b82f6]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
 
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
 
-                <p className="text-gray-400 leading-7">{project.description}</p>
+                <p className="text-zinc-500 dark:text-gray-400 leading-7">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mt-5">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2f2d36] border border-white/10 text-sm text-gray-200 hover:border-[#B48A83] transition"
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2f2d36] border border-zinc-200 dark:border-white/10 text-sm text-zinc-700 dark:text-gray-200 hover:border-[#06b6d4] transition"
                     >
                       {techIcons[tech]}
                       {tech}
@@ -138,7 +138,7 @@ const Projects = () => {
                   >
                     <Link
                       href={`/project/${project.id}`}
-                      className="flex items-center gap-2 bg-[#8D6F69] px-5 py-3 rounded-full hover:bg-[#a27d76] transition whitespace-nowrap"
+                      className="flex items-center gap-2 bg-[#3b82f6] px-5 py-3 rounded-full hover:bg-[#2563eb] transition whitespace-nowrap"
                     >
                       View Details →
                     </Link>

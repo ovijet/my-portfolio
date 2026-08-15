@@ -21,7 +21,7 @@ const fadeUp = {
 
 const About = () => {
   return (
-    <section id="about" className="bg-[#2d2b34] text-white py-24 overflow-hidden">
+    <section id="about" className="bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section Title */}
@@ -33,16 +33,16 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-5xl font-bold">
-            About <span className="text-[#B48A83]">Me</span>
+            About <span className="text-[#06b6d4]">Me</span>
           </h2>
           <motion.div
-            className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#B48A83]"
+            className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#06b6d4]"
             initial={{ width: 0 }}
             whileInView={{ width: 64 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           />
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-zinc-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
             Learn more about my journey, passion, and the technologies I work with.
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ const About = () => {
           >
             <div className="relative">
               <motion.div
-                className="absolute inset-0 bg-[#8D6F69] blur-[100px] opacity-30 rounded-full"
+                className="absolute inset-0 bg-[#3b82f6] blur-[100px] opacity-30 rounded-full"
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -72,7 +72,7 @@ const About = () => {
                   alt="Ovijet Halder"
                   width={400}
                   height={400}
-                  className="relative rounded-3xl border-4 border-[#8D6F69]"
+                  className="relative rounded-3xl border-4 border-[#3b82f6]"
                 />
               </motion.div>
             </div>
@@ -87,19 +87,19 @@ const About = () => {
           >
             <h3 className="text-3xl font-bold mb-6">Frontend Developer</h3>
 
-            <p className="text-gray-400 leading-8 mb-6">
+            <p className="text-zinc-500 dark:text-gray-400 leading-8 mb-6">
               I'm Ovijet Halder, a passionate Frontend Developer from Bangladesh.
               I enjoy building responsive, user-friendly, and modern web applications
               using React, Next.js, Tailwind CSS, and JavaScript.
             </p>
 
-            <p className="text-gray-400 leading-8 mb-6">
+            <p className="text-zinc-500 dark:text-gray-400 leading-8 mb-6">
               My programming journey started with HTML and CSS, and gradually I
               learned JavaScript, React, and full-stack development. I enjoy solving
               real-world problems through clean code and intuitive user interfaces.
             </p>
 
-            <p className="text-gray-400 leading-8">
+            <p className="text-zinc-500 dark:text-gray-400 leading-8">
               Outside of programming, I enjoy learning new technologies, watching
               tech content, and continuously improving my development skills.
             </p>
@@ -117,12 +117,12 @@ const About = () => {
                   whileHover={{
                     scale: 1.05,
                     backgroundColor: "#46434d",
-                    boxShadow: "0 8px 30px rgba(141,111,105,0.25)",
+                    boxShadow: "0 8px 30px rgba(6,182,212,0.25)",
                   }}
-                  className="bg-[#3b3943] rounded-2xl p-6 text-center cursor-default transition-colors duration-300"
+                  className="bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-sm hover:bg-white/10 rounded-2xl p-6 text-center cursor-default transition-colors duration-300"
                 >
                   <motion.h4
-                    className="text-4xl font-bold text-[#B48A83]"
+                    className="text-4xl font-bold text-[#06b6d4]"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -130,7 +130,7 @@ const About = () => {
                   >
                     {stat.value}
                   </motion.h4>
-                  <p className="text-gray-400 mt-2">{stat.label}</p>
+                  <p className="text-zinc-500 dark:text-gray-400 mt-2">{stat.label}</p>
                 </motion.div>
               ))}
             </div>

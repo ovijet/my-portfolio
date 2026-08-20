@@ -87,7 +87,7 @@ const Hero = () => {
                 boxShadow: "0 0 25px rgba(6,182,212,0.5)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#3b82f6] hover:bg-[#2563eb] flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition duration-300"
+              className="bg-[#3b82f6] text-white hover:bg-[#2563eb] flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition duration-300"
             >
               <Download size={18} />
               Download Resume
@@ -101,7 +101,7 @@ const Hero = () => {
                 color: "black",
               }}
               whileTap={{ scale: 0.95 }}
-              className="border border-white px-8 flex justify-center item-center gap-2 py-4 rounded-full hover:bg-white hover:text-black transition duration-300"
+              className="border border-red px-8 flex justify-center item-center gap-2 py-4 rounded-full   transition duration-300"
             >
               <IoMdContact size={18} className="mt-1" /> Contact Me
             </motion.a>
@@ -143,7 +143,7 @@ const Hero = () => {
                 <Link
                   href={social.href}
                   target="_blank"
-                  className="flex items-center gap-2 bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 px-6 py-3 rounded-full hover:bg-[#3b82f6] hover:border-transparent transition"
+                  className="flex items-center gap-2 bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 px-6 py-3 rounded-full hover:bg-[#3b82f6] hover:text-white hover:border-transparent transition"
                 >
                   {social.icon}
                   {social.label}

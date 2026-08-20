@@ -122,7 +122,7 @@ const Projects = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2f2d36] border border-zinc-200 dark:border-white/10 text-sm text-zinc-700 dark:text-gray-200 hover:border-[#06b6d4] transition"
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-[#2f2d36] border border-zinc-200 dark:border-white/10 text-sm text-zinc-800 dark:text-gray-200 hover:border-[#06b6d4] transition"
                     >
                       {techIcons[tech]}
                       {tech}
@@ -138,7 +138,7 @@ const Projects = () => {
                   >
                     <Link
                       href={`/project/${project.id}`}
-                      className="flex items-center gap-2 bg-[#3b82f6] px-5 py-3 rounded-full hover:bg-[#2563eb] transition whitespace-nowrap"
+                      className="flex items-center gap-2 bg-[#3b82f6] text-white px-5 py-3 rounded-full hover:bg-[#2563eb] transition whitespace-nowrap"
                     >
                       View Details →
                     </Link>

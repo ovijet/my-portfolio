@@ -3,10 +3,8 @@ import "./globals.css";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
 import CustomCursor from "@/component/Curser";
-import ScrollToTop from "@/component/ScrollToTop";
-
-
-
+import AIChatbot from "@/component/AIChatbot";
+import { ThemeProvider } from "@/component/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,11 +16,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-import { ThemeProvider } from "@/component/ThemeProvider";
-
 export const metadata = {
-  title: "Ovijit | Portfolio",
-  description: "Ovijit Halder Portfolio",
+  title: "Ovijit Halder | Full Stack Software Developer",
+  description: "Portfolio of Ovijit Halder - Full Stack Developer specializing in React, Next.js, Node.js, and MongoDB.",
 };
 
 export default function RootLayout({ children }) {
@@ -36,11 +32,13 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar/>
           {children}
+          <AIChatbot/>
           <CustomCursor/>
-          <ScrollToTop/>
           <Footer/>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
+

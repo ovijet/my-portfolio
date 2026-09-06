@@ -2,29 +2,32 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Award, Code, Cpu, Flame } from "lucide-react";
 
 const stats = [
-  { value: "10+", label: "Projects Completed" },
-  { value: "1+", label: "Years Learning" },
-  { value: "15+", label: "Technologies" },
-  { value: "100%", label: "Passionate" },
+  { value: "10+", label: "Projects Completed", icon: <Code className="text-cyan-500" size={24} /> },
+  { value: "1+", label: "Years Learning & Coding", icon: <Award className="text-blue-500" size={24} /> },
+  { value: "15+", label: "Tech Stack & Tools", icon: <Cpu className="text-indigo-500" size={24} /> },
+  { value: "100%", label: "Dedication & Passion", icon: <Flame className="text-amber-500" size={24} /> },
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: "easeOut" },
+    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" },
   }),
 };
 
 const About = () => {
   return (
-    <section id="about" className="bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white py-24 overflow-hidden relative">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
-        {/* Section Title */}
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -32,80 +35,75 @@ const About = () => {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl font-bold">
-            About <span className="text-[#06b6d4]">Me</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-cyan-500 bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/20">
+            Get To Know Me
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black mt-3">
+            About <span className="text-gradient">Me</span>
           </h2>
           <motion.div
-            className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#06b6d4]"
+            className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600"
             initial={{ width: 0 }}
-            whileInView={{ width: 64 }}
+            whileInView={{ width: 80 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           />
-          <p className="text-zinc-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-            Learn more about my journey, passion, and the technologies I work with.
-          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* Left — Image */}
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column — Image & Decorative Backdrop (5 cols) */}
           <motion.div
-            className="flex justify-center"
-            initial={{ opacity: 0, x: -60 }}
+            className="lg:col-span-5 flex justify-center"
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative">
+            <div className="relative w-full max-w-sm">
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-3xl blur-2xl opacity-25 -rotate-3" />
               <motion.div
-                className="absolute inset-0 bg-[#3b82f6] blur-[100px] opacity-30 rounded-full"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <motion.div
-                whileHover={{ scale: 1.03, rotate: 1 }}
+                whileHover={{ scale: 1.02, rotate: 1 }}
                 transition={{ type: "spring", stiffness: 200 }}
+                className="relative rounded-3xl overflow-hidden border border-zinc-200 dark:border-white/10 shadow-2xl bg-zinc-900"
               >
                 <Image
                   src="/ovi.jpg"
                   alt="Ovijet Halder"
-                  width={400}
-                  height={400}
-                  className="relative rounded-3xl border-4 border-[#3b82f6]"
+                  width={450}
+                  height={500}
+                  className="w-full h-[440px] object-cover object-top hover:scale-105 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/10 dark:bg-black/40 backdrop-blur-md border border-white/15">
+                  <p className="text-white font-bold text-base">Ovijit Halder</p>
+                  <p className="text-cyan-400 text-xs font-mono">Full Stack Web Developer</p>
+                </div>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* Right — Text */}
+          {/* Right Column — Narrative & Stats (7 cols) */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
+            className="lg:col-span-7"
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h3 className="text-3xl font-bold mb-6">Frontend Developer</h3>
+            <h3 className="text-2xl md:text-3xl font-extrabold mb-4 tracking-tight">
+              Passionate Web Developer & Creative Problem Solver
+            </h3>
 
-            <p className="text-zinc-500 dark:text-gray-400 leading-8 mb-6">
-              I'm Ovijet Halder, a passionate Frontend Developer from Bangladesh.
-              I enjoy building responsive, user-friendly, and modern web applications
-              using React, Next.js, Tailwind CSS, and JavaScript.
+            <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed mb-4">
+              I'm Ovijet Halder, a Web Developer based in Bangladesh with a passion for building clean, user-centric, and scalable web applications. My tech journey began with raw HTML & CSS, evolving into full-stack JavaScript development using React, Next.js, Express, and MongoDB.
             </p>
 
-            <p className="text-zinc-500 dark:text-gray-400 leading-8 mb-6">
-              My programming journey started with HTML and CSS, and gradually I
-              learned JavaScript, React, and full-stack development. I enjoy solving
-              real-world problems through clean code and intuitive user interfaces.
+            <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed mb-8">
+              I specialize in creating pixel-perfect responsive user interfaces with Tailwind CSS and Framer Motion, while architecting secure backends with JWT, MongoDB, and Next.js Server Actions.
             </p>
 
-            <p className="text-zinc-500 dark:text-gray-400 leading-8">
-              Outside of programming, I enjoy learning new technologies, watching
-              tech content, and continuously improving my development skills.
-            </p>
-
-            {/* Stats Cards */}
-            <div className="grid grid-cols-2 gap-5 mt-10">
+            {/* Stats Cards Grid */}
+            <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -114,28 +112,24 @@ const About = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "#46434d",
-                    boxShadow: "0 8px 30px rgba(6,182,212,0.25)",
-                  }}
-                  className="bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 backdrop-blur-sm hover:bg-white/10 rounded-2xl p-6 text-center cursor-default transition-colors duration-300"
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  className="glass-card rounded-2xl p-5 border border-zinc-200 dark:border-white/10 transition-all duration-300 shadow-sm"
                 >
-                  <motion.h4
-                    className="text-4xl font-bold text-[#06b6d4]"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", stiffness: 200, delay: 0.2 + i * 0.1 }}
-                  >
-                    {stat.value}
-                  </motion.h4>
-                  <p className="text-zinc-500 dark:text-gray-400 mt-2">{stat.label}</p>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10">
+                      {stat.icon}
+                    </div>
+                    <span className="text-3xl font-black text-zinc-900 dark:text-white">
+                      {stat.value}
+                    </span>
+                  </div>
+                  <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

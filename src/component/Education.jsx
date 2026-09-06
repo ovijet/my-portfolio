@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GraduationCap, Calendar, Award } from "lucide-react";
 
 const educations = [
   {
@@ -8,94 +9,105 @@ const educations = [
     degree: "Diploma in Computer Science & Engineering",
     institute: "Jessore Polytechnic Institute",
     result: "CGPA: 3.25 / 4.00",
-    desc: "Completed a Diploma in Computer Science & Engineering, where I gained practical knowledge in programming, web development, database management, networking, and software development. I also built several frontend and full-stack projects using modern web technologies.",
+    desc: "Acquired comprehensive hands-on foundation in computer science core topics including data structures, software engineering principles, web application development, database architecture, and networking protocols.",
   },
   {
     period: "2017 - 2019",
     degree: "Secondary School Certificate (SSC)",
     institute: "Noapara Government High School",
     result: "GPA: 4.25 / 5.00",
-    desc: "Successfully completed SSC with a strong academic foundation in science, developing problem-solving skills and an interest in technology that inspired me to pursue Computer Science & Engineering.",
+    desc: "Built a solid academic background in science and mathematics, fostering analytical problem-solving skills and an early interest in computing technologies.",
   },
 ];
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="education" className="py-24 bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white overflow-hidden relative">
+      <div className="max-w-5xl mx-auto px-6">
 
         {/* Heading */}
         <motion.div
-          className="text-center mb-14"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl font-bold">
-            My <span className="text-[#06b6d4]">Education</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-cyan-500 bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/20">
+            Academic Background
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black mt-3">
+            My <span className="text-gradient">Education</span>
           </h2>
           <motion.div
-            className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#06b6d4]"
+            className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600"
             initial={{ width: 0 }}
-            whileInView={{ width: 64 }}
+            whileInView={{ width: 80 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           />
         </motion.div>
 
-        {/* Timeline */}
+        {/* Timeline Container */}
         <div className="relative space-y-8">
-          {/* Vertical line */}
+          {/* Vertical Glowing Line */}
           <motion.div
-            className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#06b6d4] via-[#3b82f6] to-transparent hidden md:block"
+            className="absolute left-6 top-3 bottom-3 w-0.5 bg-gradient-to-b from-cyan-500 via-blue-500 to-transparent hidden md:block"
             initial={{ scaleY: 0, originY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           />
 
           {educations.map((edu, i) => (
             <motion.div
               key={edu.degree}
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
-              className="md:pl-20 relative"
+              transition={{ duration: 0.5, delay: i * 0.15, ease: "easeOut" }}
+              className="md:pl-16 relative"
             >
-              {/* Dot */}
+              {/* Timeline Icon Node */}
               <motion.div
-                className="hidden md:flex absolute left-5 top-8 w-6 h-6 rounded-full bg-[#06b6d4] border-4 border-zinc-50 dark:border-black items-center justify-center"
+                className="hidden md:flex absolute left-3 top-6 w-7 h-7 rounded-full bg-cyan-500 text-white items-center justify-center -translate-x-1/2 shadow-lg shadow-cyan-500/50 z-10"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 300, delay: i * 0.15 + 0.3 }}
-              />
-
-              <motion.div
-                whileHover={{
-                  borderColor: "#06b6d4",
-                  boxShadow: "0 8px 30px rgba(180,138,131,0.15)",
-                  x: 6,
-                }}
-                transition={{ type: "spring", stiffness: 200 }}
-                className="bg-white dark:bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-zinc-200 dark:border-white/10 hover:bg-white/10 transition-colors duration-300"
+                transition={{ type: "spring", stiffness: 300, delay: i * 0.15 + 0.2 }}
               >
-                <span className="text-[#06b6d4] font-semibold">{edu.period}</span>
+                <GraduationCap size={14} />
+              </motion.div>
 
-                <h3 className="text-3xl font-bold mt-2">{edu.degree}</h3>
+              {/* Glass Card */}
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 200 }}
+                className="glass-card glass-card-hover rounded-3xl p-7 border border-zinc-200 dark:border-white/10 shadow-lg"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                  <div className="flex items-center gap-2 text-cyan-500 dark:text-cyan-400 font-bold text-xs">
+                    <Calendar size={14} />
+                    <span>{edu.period}</span>
+                  </div>
 
-                <h4 className="text-xl text-zinc-600 dark:text-gray-300 mt-2">{edu.institute}</h4>
+                  <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 font-semibold text-xs flex items-center gap-1.5">
+                    <Award size={13} />
+                    <span>{edu.result}</span>
+                  </span>
+                </div>
 
-                <p className="mt-2 text-zinc-500 dark:text-gray-400">
-                  <span className="font-semibold text-zinc-900 dark:text-white">
-                    {edu.result.split(":")[0]}:
-                  </span>{" "}
-                  {edu.result.split(":")[1]}
+                <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
+                  {edu.degree}
+                </h3>
+
+                <h4 className="text-sm font-semibold text-zinc-600 dark:text-zinc-400 mt-1">
+                  {edu.institute}
+                </h4>
+
+                <p className="mt-4 text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+                  {edu.desc}
                 </p>
-
-                <p className="mt-5 text-zinc-500 dark:text-gray-400 leading-8">{edu.desc}</p>
               </motion.div>
             </motion.div>
           ))}

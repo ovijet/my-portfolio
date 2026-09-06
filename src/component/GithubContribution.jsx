@@ -33,7 +33,7 @@ const GithubContribution = () => {
   useEffect(() => {
     const updateScheme = () => {
       setColorScheme(
-        document.documentElement.classList.contains("dark") ? "dark" : "light"
+        document.documentElement.classList.contains("dark") ? "dark" : "light",
       );
     };
     updateScheme();
@@ -225,8 +225,9 @@ const GithubContribution = () => {
                   <span className="font-bold" style={{ color: "#06b6d4" }}>
                     {tooltip.count === 0
                       ? "No contributions"
-                      : `${tooltip.count} contribution${tooltip.count !== 1 ? "s" : ""
-                      }`}
+                      : `${tooltip.count} contribution${
+                          tooltip.count !== 1 ? "s" : ""
+                        }`}
                   </span>
                 </div>
                 <div className="opacity-70">{formatDate(tooltip.date)}</div>

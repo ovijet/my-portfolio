@@ -4,7 +4,13 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Download, Sparkles, Send } from "lucide-react";
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaReact, FaNodeJs } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaGithub,
+  FaLinkedinIn,
+  FaReact,
+  FaNodeJs,
+} from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
@@ -23,10 +29,26 @@ const itemVariants = {
 };
 
 const floatingBadges = [
-  { icon: <SiNextdotjs size={20} />, label: "Next.js", position: "-top-3 -left-4" },
-  { icon: <FaReact size={22} className="text-cyan-400" />, label: "React", position: "top-1/4 -right-6" },
-  { icon: <SiTailwindcss size={20} className="text-sky-400" />, label: "Tailwind", position: "bottom-10 -left-6" },
-  { icon: <FaNodeJs size={22} className="text-emerald-400" />, label: "Node.js", position: "-bottom-2 right-8" },
+  {
+    icon: <SiNextdotjs size={20} />,
+    label: "Next.js",
+    position: "-top-3 -left-4",
+  },
+  {
+    icon: <FaReact size={22} className="text-cyan-400" />,
+    label: "React",
+    position: "top-1/4 -right-6",
+  },
+  {
+    icon: <SiTailwindcss size={20} className="text-sky-400" />,
+    label: "Tailwind",
+    position: "bottom-10 -left-6",
+  },
+  {
+    icon: <FaNodeJs size={22} className="text-emerald-400" />,
+    label: "Node.js",
+    position: "-bottom-2 right-8",
+  },
 ];
 
 const Hero = () => {
@@ -76,14 +98,16 @@ const Hero = () => {
             variants={itemVariants}
             className="text-2xl md:text-3xl mt-4 font-bold text-zinc-700 dark:text-zinc-300 min-h-[40px]"
           >
-            <span className="text-zinc-500 dark:text-zinc-400 font-normal">Building </span>
+            <span className="text-zinc-500 dark:text-zinc-400 font-normal">
+              Building{" "}
+            </span>
             <TypeAnimation
               sequence={[
-                "Full Stack Web Applications",
+                "Front-End Developer",
                 3000,
-                "Modern React & Next.js UIs",
+                "Back-End Developer",
                 3000,
-                "Scalable Node.js Backend APIs",
+                "Full Stack Developer (MERN focus)",
                 3000,
               ]}
               wrapper="span"
@@ -97,7 +121,10 @@ const Hero = () => {
             variants={itemVariants}
             className="mt-6 text-zinc-600 dark:text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl"
           >
-            Passionate Software Developer skilled in crafting high-performance full-stack web applications with Next.js, React, Node.js, and MongoDB. Focused on slick UI design, micro-interactions, and robust API architecture.
+            Passionate Software Developer skilled in crafting high-performance
+            full-stack web applications with Next.js, React, Node.js, and
+            MongoDB. Focused on slick UI design, micro-interactions, and robust
+            API architecture.
           </motion.p>
 
           {/* Action Buttons */}
@@ -226,7 +253,9 @@ const Hero = () => {
                 }}
               >
                 {badge.icon}
-                <span className="text-zinc-800 dark:text-zinc-200">{badge.label}</span>
+                <span className="text-zinc-800 dark:text-zinc-200">
+                  {badge.label}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -237,4 +266,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

@@ -5,6 +5,7 @@ import Footer from "@/component/Footer";
 import CustomCursor from "@/component/Curser";
 import AIChatbot from "@/component/AIChatbot";
 import { ThemeProvider } from "@/component/ThemeProvider";
+import Preloader from "@/component/Preloader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +19,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Ovijit Halder | Full Stack Software Developer",
-  description: "Portfolio of Ovijit Halder - Full Stack Developer specializing in React, Next.js, Node.js, and MongoDB.",
+  description:
+    "Portfolio of Ovijit Halder - Full Stack Developer specializing in React, Next.js, Node.js, and MongoDB.",
 };
 
 export default function RootLayout({ children }) {
@@ -30,15 +32,14 @@ export default function RootLayout({ children }) {
     >
       <body className="bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white min-h-full flex flex-col transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar/>
+          <Navbar />
+          <Preloader />
           {children}
-          <AIChatbot/>
-          <CustomCursor/>
-          <Footer/>
+          <AIChatbot />
+          <CustomCursor />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
   );
 }
-
-

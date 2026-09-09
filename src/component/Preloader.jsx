@@ -33,7 +33,7 @@ export default function Preloader() {
 
         {/* Text */}
         <p className="text-lg font-semibold tracking-wider text-white">
-          Loading...
+          Loading.....
         </p>
 
       </div>

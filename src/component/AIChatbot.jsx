@@ -147,7 +147,7 @@ const AIChatbot = () => {
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500" />
             </div>
-            <span className="font-bold text-xs tracking-wide">Ask AI Assistant</span>
+            {/* <span className="font-bold text-xs tracking-wide">Ask AI Assistant</span> */}
           </motion.button>
         )}
       </AnimatePresence>
